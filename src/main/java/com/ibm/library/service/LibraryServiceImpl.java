@@ -33,4 +33,19 @@ public class LibraryServiceImpl implements LibraryService {
 
 		return books;
 	}
+
+	@Override
+	public BookData getBookbyISBN(String isbn) {
+		logger.debug("Entered LibraryServiceImpl.getBookByISBN()");
+		
+		//BookData book = this.bookInventoryEndpoint.getBook(isbn);
+		BookData book = new BookData("FICTION", isbn, "Dummy Book", "Dummy Author"); //temp soluation
+		
+		logger.info("Book retrieved: {}", book);
+	    logger.debug("Leaving LibraryServiceImpl.getBookByISBN()");
+
+		return book;
+	}
+	
+	
 }

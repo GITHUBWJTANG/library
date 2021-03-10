@@ -35,4 +35,16 @@ public class LibraryController {
 
 		return responseEntity;
 	}
+	
+	@RequestMapping(value = "/book")
+	public ResponseEntity<?> getBookbyISBN(String isbn) {
+
+		logger.info("Entered LibraryController.getBookByISBN(String isbn)");
+		BookData book = this.libraryService.getBookbyISBN("dummy ISBN");
+		ResponseEntity<BookData> responseEntity = new ResponseEntity<BookData>(book,
+				HttpStatus.OK);
+		logger.info("Leaving LibraryController.getBookByISBN(String isbn)");
+
+		return responseEntity;
+	}
 }

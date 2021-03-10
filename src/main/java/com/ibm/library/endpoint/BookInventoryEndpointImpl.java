@@ -34,4 +34,21 @@ public class BookInventoryEndpointImpl implements BookInventoryEndpoint {
 
 		return books;
 	}
+
+	@Override
+	public BookData getBook(String isbn) {
+		//BookData book = null;
+
+		//String bookInventoryRESTRequestURL = "http://" + bookInventoryEndpoint + "/bookinventory/books";
+
+		//BookData[] bookDataArray = this.restTemplate.getForObject(bookInventoryRESTRequestURL, BookData[].class);
+
+		//if ((bookDataArray != null) && (bookDataArray.length != 0)) {
+		//	book = (BookData) Arrays.asList(bookDataArray);
+		//}
+		String bookInventoryRESTRequestURL = "http://" + bookInventoryEndpoint + "/bookinventory/book";
+		BookData book = this.restTemplate.getForObject(bookInventoryRESTRequestURL, BookData.class);
+
+		return book;
+	}
 }
